@@ -1,0 +1,540 @@
+{
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					""
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Traditional"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"PdfLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"XeLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"LuaLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Basic Builder"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Basic Builder - PdfLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Basic Builder - XeLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Basic Builder - LuaLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Script Builder"
+				]
+			],
+			[
+				"Packages/LaTeXTools/LaTeX.sublime-build",
+				"XeLaTeX"
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"pre",
+				"Pretty JSON: Format JSON"
+			],
+			[
+				"json",
+				"Set Syntax: JSON"
+			],
+			[
+				"wor",
+				"Word Wrap: Toggle"
+			],
+			[
+				"sort",
+				"Sort Lines"
+			],
+			[
+				"wo",
+				"Word Wrap: Toggle"
+			],
+			[
+				"bui",
+				"Build With: LaTeX - XeLaTeX"
+			],
+			[
+				"word",
+				"Word Wrap: Toggle"
+			],
+			[
+				"title",
+				"Convert Case: Title Case"
+			],
+			[
+				"sor",
+				"Sort Lines"
+			],
+			[
+				"uniqu",
+				"Permute Lines: Unique"
+			],
+			[
+				"con",
+				"Indentation: Convert to Spaces"
+			],
+			[
+				"conver",
+				"Indentation: Convert to Spaces"
+			],
+			[
+				"bash",
+				"Set Syntax: Bash"
+			],
+			[
+				"case",
+				"Convert Case: UpperCamelCase"
+			],
+			[
+				"python",
+				"Set Syntax: Python"
+			],
+			[
+				"shu",
+				"Permute Lines: Shuffle"
+			],
+			[
+				"prett",
+				"Pretty JSON: Format JSON"
+			],
+			[
+				"pret",
+				"Pretty JSON: Format JSON"
+			],
+			[
+				"yaml",
+				"Set Syntax: YAML"
+			],
+			[
+				"form",
+				"Pretty JSON: Format JSON"
+			],
+			[
+				"mi",
+				"Pretty JSON: Minify JSON"
+			],
+			[
+				"min",
+				"Pretty JSON: Minify JSON"
+			],
+			[
+				"mini",
+				"Pretty JSON: Minify JSON"
+			],
+			[
+				"json va",
+				"Pretty JSON: Validate"
+			],
+			[
+				"jsion",
+				"Pretty JSON: Format JSON Lines"
+			],
+			[
+				"terminus",
+				"Terminus: Open Default Shell in Tab (View)"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"termin",
+				"Terminal: Open"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"pytho",
+				"Set Syntax: Python"
+			],
+			[
+				"pyth",
+				"Set Syntax: Python"
+			],
+			[
+				"py",
+				"Set Syntax: Python"
+			],
+			[
+				"syntax pyt",
+				"Set Syntax: Python"
+			],
+			[
+				"",
+				"Build With: LaTeX - Basic Builder - PdfLaTeX"
+			],
+			[
+				"convert",
+				"Indentation: Convert to Spaces"
+			],
+			[
+				"json ",
+				"Pretty JSON: Format JSON"
+			],
+			[
+				"latex",
+				"Build With: LaTeX - PdfLaTeX"
+			],
+			[
+				"unique",
+				"Permute Lines: Unique"
+			],
+			[
+				"convert to s",
+				"Indentation: Convert to Spaces"
+			],
+			[
+				"pretty",
+				"Pretty JSON: Format JSON"
+			],
+			[
+				"latex b",
+				"Build With: LaTeX - PdfLaTeX"
+			],
+			[
+				"weo",
+				"Word Wrap: Toggle"
+			],
+			[
+				"pdf ",
+				"Build With: LaTeX - PdfLaTeX"
+			],
+			[
+				"json pre",
+				"Pretty JSON: Format JSON"
+			],
+			[
+				"jso",
+				"Set Syntax: JSON"
+			],
+			[
+				"install ",
+				"Package Control: Install Package"
+			],
+			[
+				"dele",
+				"LaTeXTools: Delete temporary files"
+			],
+			[
+				"delete",
+				"LaTeXTools: Delete temporary files"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Users/nay/git-repos/phd-dissertation"
+	],
+	"file_history":
+	[
+		"/Users/nay/Downloads/10.1515_ling-2017-0032.bib",
+		"/Users/nay/Downloads/final.bib",
+		"/Users/nay/Downloads/semprag-final.tex",
+		"/Users/nay/Desktop/diss-intro.txt",
+		"/Users/nay/Downloads/citations-20240118T005741.bibtex",
+		"/Users/nay/gdrive/Bureaucracy/usa-pr/questions.txt",
+		"/Users/nay/gdrive/Bureaucracy/stanford/post-completion_opt/add-info.txt",
+		"/Users/nay/Desktop/katie",
+		"/Users/nay/Downloads/chunks/test-01.mp3",
+		"/Users/nay/Downloads/chunks_as_hex.txt",
+		"/Users/nay/Downloads/chunks_as_hex (1).txt",
+		"/Users/nay/Library/CloudStorage/GoogleDrive-naymyo89@gmail.com/Other computers/My Mac mini/sandboxes/melhubert/cramming/gcp-setup.sh",
+		"/Users/nay/Desktop/final_grading.txt",
+		"/Users/nay/Downloads/sigtyp2024 (Version 1780)/latex/acl_latex.tex",
+		"/Users/nay/gdrive/rime-internship/2023-06-27_labelstudio-gcp-setup.sh",
+		"/Users/nay/Desktop/keep/ft-reruns.sh",
+		"/Users/nay/Desktop/keep/ft-ib-runs.sh",
+		"/Users/nay/Downloads/metadata/dev.scp",
+		"/Users/nay/Downloads/metadata/SPKINFO.txt",
+		"/Users/nay/Desktop/keep/ft-sa-runs.sh",
+		"/Users/nay/Desktop/keep/pretrain-runs.sh",
+		"/Users/nay/Desktop/setswana-test.xml",
+		"/Users/nay/Desktop/setswana-train.xml",
+		"/Users/nay/Desktop/gcpb-a100-1.sh",
+		"/Users/nay/Desktop/hw7.txt",
+		"/Users/nay/Desktop/keep/ft-gl.sh",
+		"/Users/nay/Desktop/gcp-run.sh",
+		"/Users/nay/Desktop/ft-reruns.sh",
+		"/Users/nay/Desktop/nlprun-eval.sh",
+		"/Users/nay/Desktop/copy-indicSUPERB.sh",
+		"/Users/nay/Desktop/process_IndicSUPERB.sh",
+		"/Users/nay/Desktop/hw6",
+		"/Users/nay/git-repos/fairseq/fairseq/models/wav2vec/wav2vec2.py",
+		"/Users/nay/Downloads/eval.py",
+		"/Users/nay/Desktop/eval.py",
+		"/Users/nay/Desktop/test.sh",
+		"/Users/nay/Downloads/Punjabi/train.unit",
+		"/Users/nay/Downloads/config (1).yaml",
+		"/Users/nay/Downloads/config (2).yaml",
+		"/Users/nay/Library/Containers/com.apple.mail/Data/Library/Mail Downloads/6ED7280C-A12C-4AE6-B178-D3E8C22C6EBA/wav2vec2_xlsr53+ainu.yaml",
+		"/Users/nay/Desktop/test-gcp-launch.sh",
+		"/Users/nay/Downloads/2023-11-07T08_05_29.468529-08_00.tsv",
+		"/Users/nay/Downloads/2023-11-08T10_29_44.892813-08_00.tsv",
+		"/Users/nay/Desktop/codes_CV-mms.R",
+		"/Users/nay/gdrive/Bureaucracy/sleep/volker-karin_notes.txt",
+		"/Users/nay/Desktop/sphinx_1xA100.yaml",
+		"/Users/nay/Library/Containers/com.apple.mail/Data/Library/Mail Downloads/B277513B-6CEE-4D7B-BE06-5373961BE62D/wav2vec2_xlsr53+ainu.yaml",
+		"/Users/nay/Desktop/config_malay-70h.yml",
+		"/Users/nay/Desktop/config_javanese-140h.yml",
+		"/Users/nay/Desktop/ling145_midterm",
+		"/Users/nay/.config/rclone/rclone.conf",
+		"/Users/nay/Library/CloudStorage/GoogleDrive-naymyo89@gmail.com/Other computers/My Mac mini/sandboxes/probing/20211217_dan-martijn.R",
+		"/Users/nay/Desktop/test.TextGrid",
+		"/Users/nay/Downloads/udasr-main/m2ds2/models.py",
+		"/Users/nay/Downloads/udasr-main/m2ds2/m2ds2.py",
+		"/Users/nay/Downloads/udasr-main/lm/filter_perplexity.py",
+		"/Users/nay/gdrive/iterm2-logging/_scratchpad.sh",
+		"/Users/nay/gdrive/Bureaucracy/stanford/UAS-loan.txt",
+		"/Users/nay/Downloads/cornelius_derek_20230726_neumann-u87_nar-take01_44khz.TextGrid",
+		"/Users/nay/Downloads/aguilera_leonela_20230815-01_sony-c100_nar_16khz-loudnormed (1).TextGrid",
+		"/Users/nay/Downloads/barker_sandy_20230728_neumann-u87_nar-take01_192khz.TextGrid",
+		"/Users/nay/Downloads/aguilera_leonela_20230815-01_sony-c100_nar_192khz.TextGrid",
+		"/Users/nay/Downloads/malay-140h.txt",
+		"/Users/nay/Desktop/test.py",
+		"/Users/nay/Downloads/2023-10-16T15_48_57.213159-07_00.tsv",
+		"/Users/nay/Desktop/psych145.tsv",
+		"/Users/nay/Downloads/GV_Dev_5h/text",
+		"/Users/nay/Desktop/hw2.txt",
+		"/Users/nay/Downloads/participants_yannylaurel.txt",
+		"/Users/nay/Downloads/aguilera_leonela_20230815-01_sony-c100_nar_22khz-loudnormed.TextGrid",
+		"/Users/nay/Downloads/aguilera_leonela_20230815-01_sony-c100_nar_16khz-loudnormed.TextGrid",
+		"/Users/nay/Desktop/145-hw1.txt",
+		"/Users/nay/Downloads/20231004_latest-audio-clips.csv",
+		"/Users/nay/.ssh/twitter.txt",
+		"/Users/nay/Desktop/long.csv",
+		"/Users/nay/Downloads/LDC2021S03.phones",
+		"/Users/nay/Downloads/manifest.tsv",
+		"/Users/nay/Downloads/lily-test.jsonl",
+		"/Users/nay/Downloads/export_38145_project-38145-at-2023-08-30-22-38-4cd75b01.json",
+		"/Users/nay/Downloads/rime-prod-a312e67c35e2.json",
+		"/Users/nay/Library/Group Containers/G69SCX94XU.duck/Library/Application Support/duck/Volumes.noindex/fractalbox-lan home/git-repos/asr-dataset-prep/data/_raw/mixtec/corpus/SMD-0009-Jardin/SMD-0009-Jardin.eaf",
+		"/Users/nay/Downloads/20230817_splittable.json",
+		"/Users/nay/Downloads/smd_mixtec_V+T (1).tsv",
+		"/Users/nay/gdrive/rime-internship/divine-anthem-391116-57ec63acb6cd.json",
+		"/Users/nay/gdrive/rime-internship/20230727-import_rime_validated_eafs.py",
+		"/Users/nay/gdrive/iterm2-logging/20230806_072450.Default.w0t0p0.C1563A79-6C4A-4323-A173-1B6982EBF6E9.54031.1664941957.log",
+		"/Users/nay/Desktop/melhubert.txt",
+		"/Users/nay/Desktop/hubert-base.txt",
+		"/Users/nay/Downloads/rime-prod-014a3f4aca10.json",
+		"/Users/nay/Desktop/buckets-readonly-key.json",
+		"/Users/nay/Downloads/rime-prod-bb21252062bf.json",
+		"/Users/nay/Downloads/rime-prod-f15da78a9993.json",
+		"/Users/nay/Downloads/rime-prod-221d3e8096b6.json",
+		"/Users/nay/Desktop/20230801_stack-trace.txt",
+		"/Users/nay/gdrive/iterm2-logging/20230728_180013.Default.w0t1p0.E48DFB52-FF6D-41B6-94F7-7CADB726F1E1.89512.2874663744.log",
+		"/Users/nay/Library/Application Support/Sublime Text/Packages/User/Terminal.sublime-settings",
+		"/Users/nay/.ssh/config",
+		"/Users/nay/.Trash/combine-shars.py",
+		"/Users/nay/Desktop/ffmpeg_commands.csv",
+		"/Users/nay/Downloads/divine-anthem-391116-2d9637e6550c.json",
+		"/Users/nay/Desktop/combine-shars.py",
+		"/Users/nay/Desktop/clifford_lily_20220131-01_earthworks_con___annots.tsv",
+		"/Users/nay/Downloads/20221102_besemah/dev.tsv",
+		"/Users/nay/Desktop/gcp-setup.sh",
+		"/Users/nay/Downloads/clifford_lily_20220131-01_earthworks_con_16khz (3).TextGrid",
+		"/Users/nay/Desktop/clifford_lily_20220131-01_earthworks_con_192khz.TextGrid",
+		"/Users/nay/Desktop/pre-norm_clifford_lily_20220131-01_earthworks_con_192khz.TextGrid",
+		"/Users/nay/Downloads/uncased_L-2_H-128_A-2/bert_config.json",
+		"/Users/nay/Downloads/train_hubert-finetune.py",
+		"/Users/nay/Library/CloudStorage/GoogleDrive-naymyo89@gmail.com/Other computers/My Mac mini/sandboxes/melhubert/Speech-SSL-Compression-6989d2/preprocess/kaldiark.py",
+		"/Users/nay/Downloads/clifford_lily_20220131-01_earthworks_con_16khz.TextGrid",
+		"/Users/nay/Downloads/clifford_lily_20220131-01_earthworks_con_16khz (2).TextGrid",
+		"/Users/nay/Desktop/16khz_2022_01_31_01_1_earthworks_16khz.TextGrid",
+		"/Users/nay/gdrive/rime-internship/clifford_lily_20220131-01_earthworks_con_16khz.TextGrid",
+		"/Users/nay/gdrive/rime-internship/En-us-cat_16000.TextGrid",
+		"/Users/nay/Downloads/hubert_tinkering.py",
+		"/Users/nay/Downloads/inspired-bazaar-246507-2308734c9fbf.json",
+		"/Users/nay/gdrive/rime-internship/2023-07-06_gcp-composer-setup.sh",
+		"/Users/nay/Downloads/pt-clean-100/data/mfcc/tsv/librispeech_train.tsv",
+		"/Users/nay/Downloads/pt-clean-100/data/mfcc/label/label_valid.pt",
+		"/Users/nay/Downloads/04_hubert_finetune.py",
+		"/Users/nay/Desktop/upload-test.html",
+		"/Users/nay/gdrive/rime-internship/vertex-docker.sh",
+		"/Users/nay/.ssh/id_ed25519.pub",
+		"/Users/nay/git-repos/nay-internship-summer2023/gcp-labelstudio-test.py",
+		"/Users/nay/gdrive/rime-internship/labelstudio-api.py",
+		"/Users/nay/gdrive/rime-internship/En-us-cat_16000.json",
+		"/Users/nay/Downloads/divine-anthem-391116-57ec63acb6cd.json"
+	],
+	"find":
+	{
+		"height": 38.0
+	},
+	"find_in_files":
+	{
+		"height": 110.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": true,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"scrollbar_highlights": true,
+		"show_context": true,
+		"use_buffer2": true,
+		"use_gitignore": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 38.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.latextools":
+	{
+		"height": 278.0
+	},
+	"pinned_build_system": "Packages/LaTeXTools/LaTeX.sublime-build",
+	"project": "sublime-project.sublime-project",
+	"replace":
+	{
+		"height": 72.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 294.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
