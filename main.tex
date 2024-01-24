@@ -10,6 +10,21 @@
 \usepackage{suthesis-2e}
 \dept{Computer Science}
 
+\usepackage[british]{babel}
+\usepackage{csquotes}
+
+\usepackage[
+backend=biber,
+style=apa,
+sorting=ynt
+]{biblatex}
+\addbibresource{main.bib}
+
+\usepackage[colorlinks=true,
+            linkcolor=blue,
+            urlcolor=blue,
+            citecolor=blue]{hyperref}
+
 \begin{document}
 \title{How to Write Theses\\
             With Two Line Titles}
@@ -30,11 +45,15 @@ I would like to thank...
 \chapter{Introduction}
 
 ü
+
+\parencite{himmelmann1998documentary}
 ...
 \chapter{Conclusions}
 ...
 \appendix
 \chapter{A Long Proof}
 ...
+
+\printbibliography
 
 \end{document}

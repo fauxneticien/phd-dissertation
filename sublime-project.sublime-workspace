@@ -1,4 +1,14 @@
 {
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"rime-audi",
+				"rime-audio-clips"
+			]
+		]
+	},
 	"buffers":
 	[
 	],
@@ -61,6 +71,10 @@
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"",
+				"Build With: LaTeX - Basic Builder - XeLaTeX"
+			],
 			[
 				"pre",
 				"Pretty JSON: Format JSON"
@@ -194,10 +208,6 @@
 				"Set Syntax: Python"
 			],
 			[
-				"",
-				"Build With: LaTeX - Basic Builder - PdfLaTeX"
-			],
-			[
 				"convert",
 				"Indentation: Convert to Spaces"
 			],
@@ -282,6 +292,11 @@
 	],
 	"file_history":
 	[
+		"/Users/nay/git-repos/phd-dissertation/main.bib",
+		"/Users/nay/git-repos/phd-dissertation/main.tex",
+		"/Users/nay/git-repos/phd-dissertation/sublime-project.sublime-project",
+		"/Users/nay/git-repos/phd-dissertation/suthesis-2e.sty",
+		"/Users/nay/git-repos/phd-dissertation/sublime-project.sublime-workspace",
 		"/Users/nay/Downloads/10.1515_ling-2017-0032.bib",
 		"/Users/nay/Downloads/final.bib",
 		"/Users/nay/Downloads/semprag-final.tex",
@@ -404,16 +419,11 @@
 		"/Users/nay/Downloads/pt-clean-100/data/mfcc/label/label_valid.pt",
 		"/Users/nay/Downloads/04_hubert_finetune.py",
 		"/Users/nay/Desktop/upload-test.html",
-		"/Users/nay/gdrive/rime-internship/vertex-docker.sh",
-		"/Users/nay/.ssh/id_ed25519.pub",
-		"/Users/nay/git-repos/nay-internship-summer2023/gcp-labelstudio-test.py",
-		"/Users/nay/gdrive/rime-internship/labelstudio-api.py",
-		"/Users/nay/gdrive/rime-internship/En-us-cat_16000.json",
-		"/Users/nay/Downloads/divine-anthem-391116-57ec63acb6cd.json"
+		"/Users/nay/gdrive/rime-internship/vertex-docker.sh"
 	],
 	"find":
 	{
-		"height": 38.0
+		"height": 50.0
 	},
 	"find_in_files":
 	{
@@ -488,7 +498,7 @@
 	},
 	"output.latextools":
 	{
-		"height": 278.0
+		"height": 604.0
 	},
 	"pinned_build_system": "Packages/LaTeXTools/LaTeX.sublime-build",
 	"project": "sublime-project.sublime-project",
