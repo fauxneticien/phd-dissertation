@@ -1,3 +1,6 @@
+# Ignore individual chapter pdfs created by subfile
+chp-*.pdf
+
 ## Core latex/pdflatex auxiliary files:
 *.aux
 *.lof

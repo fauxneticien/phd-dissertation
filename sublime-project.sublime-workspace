@@ -292,8 +292,12 @@
 	],
 	"file_history":
 	[
-		"/Users/nay/git-repos/phd-dissertation/main.bib",
 		"/Users/nay/git-repos/phd-dissertation/main.tex",
+		"/Users/nay/git-repos/phd-dissertation/chp-intro.tex",
+		"/Users/nay/git-repos/phd-dissertation/.gitignore",
+		"/Users/nay/git-repos/phd-dissertation/chapter-intro.tex",
+		"/Users/nay/git-repos/phd-dissertation/chapters/introduction.tex",
+		"/Users/nay/git-repos/phd-dissertation/main.bib",
 		"/Users/nay/git-repos/phd-dissertation/sublime-project.sublime-project",
 		"/Users/nay/git-repos/phd-dissertation/suthesis-2e.sty",
 		"/Users/nay/git-repos/phd-dissertation/sublime-project.sublime-workspace",
@@ -415,11 +419,7 @@
 		"/Users/nay/Downloads/hubert_tinkering.py",
 		"/Users/nay/Downloads/inspired-bazaar-246507-2308734c9fbf.json",
 		"/Users/nay/gdrive/rime-internship/2023-07-06_gcp-composer-setup.sh",
-		"/Users/nay/Downloads/pt-clean-100/data/mfcc/tsv/librispeech_train.tsv",
-		"/Users/nay/Downloads/pt-clean-100/data/mfcc/label/label_valid.pt",
-		"/Users/nay/Downloads/04_hubert_finetune.py",
-		"/Users/nay/Desktop/upload-test.html",
-		"/Users/nay/gdrive/rime-internship/vertex-docker.sh"
+		"/Users/nay/Downloads/pt-clean-100/data/mfcc/tsv/librispeech_train.tsv"
 	],
 	"find":
 	{
@@ -437,6 +437,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"citep"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -498,7 +499,7 @@
 	},
 	"output.latextools":
 	{
-		"height": 604.0
+		"height": 324.0
 	},
 	"pinned_build_system": "Packages/LaTeXTools/LaTeX.sublime-build",
 	"project": "sublime-project.sublime-project",
@@ -542,7 +543,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 294.0,
+	"side_bar_width": 249.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

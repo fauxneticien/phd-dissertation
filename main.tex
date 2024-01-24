@@ -11,6 +11,7 @@
 \dept{Computer Science}
 
 \usepackage[british]{babel}
+\usepackage{lineno}
 \usepackage{csquotes}
 
 \usepackage[
@@ -20,12 +21,19 @@ sorting=ynt
 ]{biblatex}
 \addbibresource{main.bib}
 
-\usepackage[colorlinks=true,
-            linkcolor=blue,
-            urlcolor=blue,
-            citecolor=blue]{hyperref}
+\usepackage[bookmarksnumbered=true,bookmarksopen=true,colorlinks=true,linkcolor=blue,citecolor=blue,filecolor=blue,urlcolor=blue]{hyperref}
+
+\usepackage{fontspec}
+\setmainfont{Times New Roman}
+
+\usepackage{epigraph,ragged2e,graphicx}
+
+\usepackage{subfiles} % Best loaded last in the preamble
 
 \begin{document}
+
+\linenumbers
+
 \title{How to Write Theses\\
             With Two Line Titles}
 \author{John Henry Candidate}
@@ -42,12 +50,8 @@ This thesis tells you all you need to know about...
 I would like to thank...
 \afterpreface
 
-\chapter{Introduction}
+\subfile{chp-intro}
 
-ü
-
-\parencite{himmelmann1998documentary}
-...
 \chapter{Conclusions}
 ...
 \appendix
