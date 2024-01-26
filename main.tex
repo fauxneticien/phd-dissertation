@@ -8,7 +8,7 @@
 %
 \documentclass{report}
 \usepackage{suthesis-2e}
-\dept{Computer Science}
+\dept{Linguistics}
 
 \usepackage[british]{babel}
 \usepackage{lineno}
@@ -16,8 +16,7 @@
 
 \usepackage[
 backend=biber,
-style=apa,
-sorting=ynt
+style=apa
 ]{biblatex}
 \addbibresource{main.bib}
 
@@ -26,7 +25,9 @@ sorting=ynt
 \usepackage{fontspec}
 \setmainfont{Times New Roman}
 
-\usepackage{epigraph,ragged2e,graphicx}
+\usepackage{epigraph,ragged2e,graphicx,booktabs,float,makecell}
+
+\newcommand{\draft}[1]{{\color{red}#1}}
 
 \usepackage{subfiles} % Best loaded last in the preamble
 
@@ -34,20 +35,17 @@ sorting=ynt
 
 \linenumbers
 
-\title{How to Write Theses\\
-            With Two Line Titles}
-\author{John Henry Candidate}
-\principaladviser{John Parker}
-\firstreader{John Green}
-\secondreader{John BigBooty}
-\thirdreader{Jane Supernumerary} %if needed
-\fourthreader{Severus Snape} %if needed
+\title{ENABLING DATA-EFFICIENT INDEXING AND TRANSCRIPTION OF SPEECH CORPORA USING FOUNDATION MODELS}
+\author{Nay Myo San}
+\principaladviser{Daniel Jurafsky}
+\firstreader{Christopher Manning}
+\secondreader{Arto Anttila}
  
 \beforepreface
-\prefacesection{Preface}
-This thesis tells you all you need to know about...
-\prefacesection{Acknowledgments}
-I would like to thank...
+% \prefacesection{Preface}
+% This thesis tells you all you need to know about...
+% \prefacesection{Acknowledgments}
+% I would like to thank...
 \afterpreface
 
 \subfile{chp-intro}
