@@ -1,0 +1,123 @@
+%!TEX root = main.tex
+\documentclass[main.tex]{subfiles}
+
+\begin{document}
+
+\chapter{Leveraging pre-trained models and supplemental texts to kick-start ASR development}
+\chaptermark{Leveraging pre-trained models and external texts for ASR}
+
+As introduced in the first chapter, the transcription of target languages in language documentation workflows can be incredibly time-consuming, taking 30--50 hours of work to transcribe an hour of recorded speech.~Automatic speech recognition (ASR) could potentially speed up this process by helping obtain transcriptions which can then be corrected by humans.~However, ASR systems are typically unavailable for many minoritised languages as their development has conventionally required at least tens if not several hundreds of hours of transcribed speech --- leaving many minoritised languages in a Catch-22.~The recent emergence of large-scale pre-trained models may provide a path forward, given their advertised ability to learn new tasks with little task-specific data.~In this chapter and the next, I examine whether we can leverage these models with only limited amounts of transcriptions along with supplemental resources to obtain ASR systems capable of delivering human-correctable first-pass transcriptions.~In this chapter, I examine whether 10 minutes of transcriptions may be sufficient to obtain such a system if some text data is also available. 
+
+\section{Background}
+
+\subsection{How does text data help ASR?}
+
+As introduced in the second chapter (§\ref{sec:w2v2-decoding}), text data can be used to derive a language model or lexicon to guide the predictions.~A language model helps bias the system to more probable word sequences,~e.g.~\emph{two dogs} vs.~\emph{too dogs}, and a lexicon helps constrain the system output to possible words,~e.g.~\emph{dogs} vs.~\emph{*dogz}.~Of course, this requires text data in the target language and for some oral languages this may not exist.~In the context of language documentation projects, however, there are likely at least various wordlists from which a lexicon can be derived even for such languages.~A natural question that arises is whether leveraging text data could help reduce the amount of transcribed speech needed to begin ASR development for documentation workflows and, if so, how much text data is needed?
+
+\subsection{Related work}
+
+An impressive result that has been widely promulgated is that pre-trained wav2vec 2.0 models may make possible ASR system development with only 10 minutes of transcribed speech \parencite{NEURIPS2020_92d1e1eb}.~What is less often reported, however, are the experiment conditions making this result possible:~1) the model was pre-trained on 960 hours of English audiobooks and 2) it leveraged a language model trained on an 803 million word corpus of the very same books (i.e.~on an in-domain corpus).~A natural question that arises is whether this result is replicable in real-world conditions for languages besides English, where a specialised monolingual model or similarly large amounts of text are not likely to be available.
+
+Compared to previous approaches, it is clear that wav2vec 2.0 models do indeed offer a much reduced upfront cost in terms of transcribed speech.~As such, there have been several recent studies appraising the utility of these models for ASR in language documentation settings \parencite[e.g.][]{coto-solano-etal-2022-development,guillaume2022fine,macaire-etal-2022-automatic,san-etal-2022-automated,zhang-etal-2022-nlp}.~Of the studies that did not examine the use of a language model (LM), examining its use is often explicitly mentioned as a clear next step \parencite[e.g.][p.~176]{guillaume2022fine}.~Of the two studies that have examined the use of a LM with a fine-tuned wav2vec 2.0 model for language documentation projects \parencite{macaire-etal-2022-automatic,san-etal-2022-automated}, a common theme has been to examine the effect of varying amounts of transcribed speech (e.g.~10--70 minutes) with and without the use of a LM trained on the full text corpus.~Similarly, the original wav2vec 2.0 experiments by \textcite{NEURIPS2020_92d1e1eb} also only examined the use of different amounts of fine-tuning data (10 minutes to 960 hours), with or without the use of LMs trained on the full 803M token corpus.
+
+Given the broader community interest in using fine-tuned wav2vec 2.0 models with LM integration along with the particular appeal that 10 minutes of transcription may be sufficient to kick-start ASR development if some text data can be leveraged, we undertook a series of experiments holding constant the amount of fine-tuning data (i.e.~10 minutes) while varying the amount of LM training text (e.g.~8k--8M tokens) to complement the aforementioned studies.
+
+\section{Method}
+
+\subsection{Replication and extension on English}
+
+We first replicated the original result for English using the wav2vec 2.0 `LS960' model pre-trained on 960 hours of LibriSpeech and the full, in-domain 803M text corpus.~For ASR fine-tuning, we used the `\texttt{1h/0}' ten minute training set defined in Libri-Light \parencite{kahn2020libri}.~Additionally, we extended the experiment by examining the effects of a) reduced amounts of text (8M, 80k, 8k) as well as b) text sourced from an out-of-domain corpus of web-crawled text \parencite[Common Crawl-EN:][]{Buck-commoncrawl}.
+
+\subsection{Real-world validation on Gronings, Frisian, Besemah, and Nasal}
+
+We then conducted validation experiments using data from two pairs of languages differing in the availability of supplemental texts and their representation in the wav2vec 2.0 XLSR-128 model pre-training data (which is 95\% European languages).~Gronings and Frisian are two West-Germanic languages spoken in the Netherlands and for each language there is an approximately 7.5M corpus of text available \parencite{de-vries-etal-2021-adapting}.~We sourced speech data for Gronings from an ongoing documentation project and Frisian data from the FAME! ASR corpus \parencite{yilmaz2017longitudinal}.~Besemah and Nasal are two predominantly oral, Malayo-Polynesian languages spoken in Indonesia and documentation projects' own materials constitute the only available text data (i.e. 9.5k lexica each).~For Besemah and Nasal, approximately 45 hours of informal conversations have been collected as part of fieldwork.~Part of these collections have been transcribed and are accessible at \mbox{PARADISEC} \parencite{mcdonnell2008besemah,mcdonnell2019nasal}.~For all four languages, we constructed comparable 4-hour datasets for our broader set of ASR experiments.~Each dataset is composed of an 80/10/10 train/dev/test split, approximately 24 minutes for each of the dev and test sets and 3.2 hours for training set, from which we sampled 10 minutes for the experiments reported here.
+
+\subsection{Fine-tuning and evaluation procedure}
+
+\corr{For English, we used the monolingual English wav2vec 2.0 model \parencite{NEURIPS2020_92d1e1eb}.~For the other four languages, we used the multilingual XLSR-128 model \parencite{babu22_interspeech}.~For fine-tuning these models for the ASR task, we used the HuggingFace Transformers library \parencite{wolf2019huggingface}.~As introduced previously (§\ref{sec:w2v2-decoding}), part of the text generation process for ASR involves decoding, which may be assisted using a lexicon or language model (LM) or unassisted, e.g.~greedy decoding.\footnote{For decoding with a lexicon and language model, we used beam search decoding via the torchaudio implementation of the Flashlight decoder \parencite[formerly wav2letter:][]{kahn2022flashlight} used in the original paper.}~We trained each model for 12k steps and then selected for evaluation the best model according to dev set performance.\footnote{For checkpoint selection, we used greedy decoding (for Besemah and Nasal) or beam search decoding first with fixed parameters (language model weight: 2, word insertion penalty: -1) for checkpoint selection after which we performed a parameter search with the best checkpoint to further optimise the dev set WER.}~To obtain an estimate of how performance varies with different text data used to derive the lexicon and LM, we conducted the evaluation experiments with 5 different random samples of each size of sub-corpora.~All our experiment code is available on GitHub.\footnote{\url{https://github.com/fauxneticien/w2v2-10min-exps/}}}
+
+% Figure below will take up full page, which latex does not like...
+\WarningFilter*{latex}{Text page \thepage\space contains only floats}
+
+\begin{figure}[!t]
+\centering
+% \vspace{2em}
+\scalebox{0.85}{
+\renewcommand{\arraystretch}{1.25}
+\begin{tabular}{llllll}
+\toprule
+% \multirow{2}{*}{\makecell{wav2vec 2.0 model}}    & \multirow{2}{*}{\makecell[l]{Language model\\(Text corpus size)}} & \multicolumn{2}{c}{WER} & \multicolumn{2}{c}{CER} \\ \cmidrule(l){4-7} 
+\multirow{2}{*}[-0.2em]{\makecell[l]{wav2vec 2.0 model\\(Fine-tuning data, 10 mins)}} & \multirow{2}{*}[-0.2em]{\makecell[l]{Language model\\(Text corpus size, no. of tokens)}} & \multicolumn{2}{c}{Mean WER (SD)} & \multicolumn{2}{c}{Mean CER (SD)} \\ \cmidrule(lr){3-4} \cmidrule(lr){5-6} 
+
+&                                                   & \makecell[c]{dev}        & \makecell[c]{test}       & \makecell[c]{dev}        & \makecell[c]{test}       \\ \midrule\midrule
+
+\multirow{10}{*}[-2em]{\makecell[l]{LS-960 (English)}} 
+& E1. None                       & 40.4 & 40.2 & 13.0 & 12.8 \\ \cmidrule{2-6}
+& E2. None, lexicon only (973k)  & 40.1 & 40.5 & 12.3 & 12.2 \\ \cmidrule{2-6}
+& \multicolumn{5}{c}{LibriSpeech (in-domain)}                     \\[0.25em]
+& E3. 4-gram, full corpus (803M)           & 13.4 & 14.2 & 6.51 & 6.75 \\ \cmidrule{2-6}
+& E4. 4-gram, subset (8M)                   & 15.9 (0.09) & 16.6 (0.07) & 7.41 (0.05) & 7.58 (0.07) \\ \cmidrule{2-6}
+& E5. 3-gram, subset (80k)                   & 23.5 (0.13) & 24.1 (0.12) & 10.5 (0.07) & 10.6 (0.10) \\ \cmidrule{2-6}
+& E6. 3-gram, subset (\textbf{8k})           & \textbf{36.5} (0.20) & \textbf{36.8} (0.34) & 17.1 (0.09) & 17.0 (0.15) \\ \cmidrule{2-6}
+% & E7. 3-gram, subset (4k)                    & 41.9 (0.20) & 42.1 (0.18) & 20.1 (0.25) & 20.0 (0.22) \\ \cmidrule{2-6}
+& \multicolumn{5}{c}{CommonCrawl-EN (out-of-domain)}                     \\[0.25em]
+& E8. 3-gram, subset (\textbf{80k})       & \textbf{27.7} (0.13) & \textbf{27.7} (0.10) & 12.1 (0.13) & 12.0 (0.13) \\ \cmidrule{2-6}
+& E9. 3-gram, subset (8k)       & 39.8 (0.12) & 39.8 (0.24) & 18.5 (0.19) & 18.3 (0.22) \\ \midrule
+
+\multirow{5}{*}[-1em]{XLSR-128 (Gronings)}
+& G1. None                                   & 43.8 & 44.0 & 11.2 & 11.3 \\ \cmidrule{2-6}
+& G2. None, lexicon only (216k)          & 41.4 & 40.7 & 10.5 & 10.3 \\ \cmidrule{2-6}
+& G3. 4-gram, full corpus (7.6M)              & 23.4 (0.22) & 22.3 (0.22) & 7.61 (0.62) & 7.44 (0.71) \\ \cmidrule{2-6}
+& G4. 3-gram, subset (\textbf{80k})                 & \textbf{35.6} (0.30) & \textbf{34.9} (0.51) & 11.8 (0.28) & 11.4 (0.34)	 \\ \cmidrule{2-6}
+& G5. 3-gram, subset (8k)                & 45.6 (0.41) & 46.3 (0.24) & 16.9 (0.67) & 16.7 (0.43) \\ \midrule
+
+\multirow{5}{*}[-1em]{XLSR-128 (Frisian)}
+& F1. None                                     & 55.1 & 53.1 & 18.6 & 18.3 \\ \cmidrule{2-6}
+& F2. None, lexicon only (251k)                & 53.8 & 51.7 & 17.9 & 17.6 \\ \cmidrule{2-6}
+& F3. 4-gram, full corpus (7.4M)               & 36.7 & 35.2 & 16.3 & 15.9 \\ \cmidrule{2-6}
+& F4. 3-gram, subset (\textbf{80k})            & \textbf{44.4} (0.37) & \textbf{43.0} (0.22) & 20.3 (0.16) & 19.9 (0.22) \\ \cmidrule{2-6}
+& F5. 3-gram, subset (8k)                 & 54.2 (0.39) & 52.2 (0.29) & 26.2 (0.30) & 26.0 (0.25) \\ \midrule
+
+\multirow{2}{*}{XLSR-128 (Besemah)}
+& B1. None                                & 62.3 & 62.1 & 21.4 & 21.2 \\       \cmidrule{2-6}
+& B2. None, lexicon only (9.5k)           & 59.9 & 62.2 & 20.1 & 21.2 \\ \midrule
+
+\multirow{2}{*}{XLSR-128 (Nasal)} & N1. None                  & 67.2 & 70.7 & 23.1 & 25.5 \\ \cmidrule{2-6}
+& N2. None, lexicon only (9.5k)            & 70.1 & 75.1 & 24.1 & 26.1 \\ 
+\bottomrule
+
+\end{tabular}}
+\captionof{table}[Results of fine-tuning wav2vec 2.0 models using only 10 minutes of transcribed speech]{Results of fine-tuning wav2vec 2.0 models (LS960: pre-trained on 960 hours of English; XLSR-128 pre-trained on 400k hours of speech from 128 languages) for  automatic speech recognition (ASR) using only 10 minutes of transcribed speech from a target language and with varying amounts of reliance on supplementary text data. ASR performance measured by word error rate (WER) and character error rate (CER). For subset experiments, reported means and standard deviations (in parentheses) were derived across 5 runs with different samples of the text corpus.
+Alphanumeric labels (E1--N1) used to assist with in-text references to results. Highlighted numbers indicate the smallest supplementary text corpus size which yielded an appreciably lower WER than without using a lexicon or language model, i.e.~the `None' condition.}
+\label{tab:results}
+\end{figure}
+
+\section{Results and discussion}
+\label{sec:resdisc}
+
+\corr{The results from our experiments are collated in Table \ref{tab:results}.~For each language, E(nglish) -- N(asal), the first condition (e.g.~E1) reports the baseline ASR performance of a model fine-tuned using 10 minutes of speech using greedy decoding, i.e. without any assistance from a lexicon or language model.~The second condition (e.g.~E2) reports the ASR performance of the same model when lexicon-assisted decoding is used.~The remaining conditions (e.g.~E3--E9) report the conditions where decoding was assisted with both a lexicon and language model, derived from either the full text corpus (e.g.~E3) or various subsets (e.g.~E4--E9).~For each language, the result highlighted in bold indicates the text corpus size that yielded an appreciably lower WER than the baseline condition (e.g.~E8 when using an out-of-domain text corpus for English).}
+
+For English, we found that fine-tuning with 10 minutes of transcribed speech yielded a test set word error rate (WER) of 40.2 (Row E1) without the use of supplementary texts and a WER of 14.2 (Row E3) using a lexicon and language model derived from the full 803M LibriSpeech text corpus.~These WERs are consistent with those reported by \textcite[][Table 9]{NEURIPS2020_92d1e1eb}, respectively: 45.3 and 13.1, allowing for some error likely from differences in the 10 minute training sets.\footnote{There was no indication as to which of the six 10-minute Libri-Light training sets were used in the original experiments.}
+
+For all languages, we found that using only a lexicon did not appreciably reduce the WER.
+For example, for English, the test set WER remained practically the same with or without a lexicon (Row E1 vs.~E2:~40.2 vs.~40.5). For Nasal, the test set WER increased from 70.7 without a lexicon (Row N1) to 75.1 when using a small 9.5k token lexicon (Row N2), which led to many erroneous substitutions from the combination of an already high WER and high out-of-vocabulary rate.
+
+For English, Gronings, and Frisian, we found that using lexica and language models derived from 80k of out-of-domain supplementary texts appreciably reduced the mean test set WER.~For English, the test set WER was reduced from 40.2 (Row E1) to 27.7 (Row E8).~For Gronings, the test set WER was reduced from 44.0 (Row G1) to 34.9 (Row G4).~For Frisian, the test set WER was reduced from 53.1 (Row F1) to 43.0 (Row F4).\footnote{This relatively higher WER for Frisian is likely due to the Frisian corpus consisting of news and radio broadcasts, compared to the read speech in Gronings.}~These results suggest that where supplemental texts in the upper tens of thousands or more are available, fine-tuning a wav2vec 2.0 model with just tens of minutes of speech holds promise for deriving first-pass transcriptions near the 20-30\% rule-of-thumb \parencite{gaur2016effects,sperber-etal-2016-optimizing}, provided the language is also well-represented in the pre-training data of the model.
+
+For languages under-represented in speech pre-training corpora and for which tens of thousands of words in supplementary texts are not available, we suspect it remains unavoidable for the time being that more than 10 minutes of transcribed speech is required to begin ASR system development.~For reducing the out-of-vocabulary rate with lexica and LMs derived from small text corpora, decomposing words into sub-word units (e.g. syllables) may be worth investigating.~In trialling an interactive transcription app for Kunwinjku, \textcite{le-ferrand-etal-2022-fashioning} report that incorporating syllable unigram frequencies derived from a word list improved the word retrieval performance by 4\% (F-score).~For reducing the performance gap due to under-representation in the pre-training data, continued pre-training may be one viable approach \parencite[e.g.][]{NOWAKOWSKI2023103148}.
+
+% In their development of an ASR system for Iban (a Malayo-Polynesian language spoken in Borneo), \textcite{juan2015using} report that transfer learning from a GMM/HMM system first trained on 120 hours of Malay before training on 1 hour of Iban yielded a test set WER of 28.3\%.
+% Investigating whether there is any benefit in first fine-tuning a wav2vec 2.0 model on a similar, higher resource language before the target language may be an interesting direction for future work.
+
+% % For reducing the out-of-vocabulary (OOV) rate with lexica and LMs derived from small text corpora, exploring the use of sub-word units (e.g. syllables) may allow for more effective use of limited amounts of text data.
+% % This line of inspiration originates from ASR work in polysynthetic languages \parencite[e.g.~][]{gupta-boulianne-2020-automatic,gupta-boulianne-2022-progress,zhang-etal-2022-nlp}, in which modelling words is simply not tenable given their internal complexity.
+
+% % Specifically for Besemah and Nasal, two Austronesian languages with a relatively limited set of permissible syllable shapes (the former of which was once written using a syllabary), modelling syllables instead of words may hold some promise.
+% % This line of inspiration originates from ASR work for polysynthetic languages, where modelling `words' is not practical given the internal complexity of words within such languages.
+% % On the acoustic modelling side, \textcite{zhang-etal-2022-nlp} report that for Cherokee fine-tuning a wav2vec 2.0 model to predict syllabic characters (from the Cherokee syllabary) proved highly effective, yielding a 20\% WER with 3 hours of fine-tuning data.
+
+\section{Conclusion}
+
+We investigated the real-world performance obtainable when leveraging various amounts of supplemental text data to help kick-start automatic speech recognition (ASR) system development with only a limited amount of transcribed speech.~Our results suggest that fine-tuning a pre-trained transformer model with just 10 minutes of transcribed speech may hold some promise for deriving human-correctable first-pass transcriptions if the language is well-represented in the model pre-training data and if the trained ASR system can incorporate a lexicon and language model derived from \corr{a text corpus with at least 80,000 words (i.e.~roughly the length of a novel)}.~For under-represented languages with little text data, leveraging self-supervised adaptation methods relying only on target language speech may be more fruitful.
+
+\end{document}

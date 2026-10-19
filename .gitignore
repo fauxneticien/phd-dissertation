@@ -334,3 +334,7 @@ TSWLatexianTemp*
 # option is specified. Footnotes are the stored in a file with suffix Notes.bib.
 # Uncomment the next line to have this generated file ignored.
 #*Notes.bib
+
+# Local staging area for repo cleanup (not tracked)
+_cleanup/
+.DS_Store
